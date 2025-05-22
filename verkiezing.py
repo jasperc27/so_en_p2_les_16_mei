@@ -1,10 +1,18 @@
 class Kandidaat:
     def __init__(self, naam):
-        self.naam = naam
-        self.stemmen = []
+        self._naam = naam
+        self._stemmen = []
+
+    @property
+    def naam(self):
+        return self._naam
+
+    @property
+    def stemmen(self):
+        return self._stemmen
 
     def geef_stem(self, stem):
-        self.stemmen.append(stem)
+        self._stemmen.append(stem)
 
     def __str__(self):
         return f"{self.naam}"
